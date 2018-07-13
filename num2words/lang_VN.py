@@ -78,8 +78,10 @@ class Num2Word_VN(object):
                 r = val - (lval * mod)
 
                 ret = self._convert_nnn(lval) + u' ' + denom[didx]
-                if 99 >= r > 0:
-                    ret = self._convert_nnn(lval) + u' ' + denom[didx] + u' lẻ'
+                if 99 >= r > 9:
+                    ret = self._convert_nnn(lval) + u' ' + denom[didx] + u' không trăm'
+                if 9 >= r > 0:
+                    ret = self._convert_nnn(lval) + u' ' + denom[didx] + u' không trăm lẻ'
                 if r > 0:
                     ret = ret + ' ' + self.vietnam_number(r)
                 return ret
